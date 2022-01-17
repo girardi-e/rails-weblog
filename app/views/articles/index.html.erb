@@ -1,2 +1,10 @@
-<h1>Welcome to My Rails Weblog</h1>
-<p>Take a look at our top-5 picks for you!</p>
+<h1>Welcome to My Rails Blog</h1>
+<h3>Check out these amazing articles we've selected for you! </h3>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= article.title %>
+    </li>
+  <% end %>
+</ul>
