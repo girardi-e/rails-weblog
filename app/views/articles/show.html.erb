@@ -2,3 +2,5 @@
 <hr>
 <small>publication: <%= @article.created_at %></small>
 <p><%= @article.body %></p>
+<%= link_to 'Go back', articles_path, class:'btn btn-primary' %>
+<%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning' %>

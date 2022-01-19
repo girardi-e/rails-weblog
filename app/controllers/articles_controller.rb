@@ -22,6 +22,17 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_article
@@ -31,5 +42,4 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :body)
   end
-
 end
