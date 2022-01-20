@@ -8,3 +8,15 @@
                       turbo_method: :delete,
                       turbo_confirm: "Are you sure?" },
                       class: 'btn btn-danger'%>
+
+<hr>
+
+<h2>Comments</h2>
+
+<%= render @article.comments %>
+
+<hr>
+
+<h3>Leave a comment:</h3>
+
+<%= render 'comments/form' %>
