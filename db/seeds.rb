@@ -4,12 +4,12 @@ Article.destroy_all
 puts 'Creating Articles ...'
 
 terminal = {
-  title: 'The ultimate terminal',
+  title: 'The Ultimate Terminal',
   body: 'A step by step guide to setup Hyper with fish and oh-my-posh',
   status: 'public'
 }
 
-argular = {
+angular = {
   title: 'Angular Components',
   body: 'Proven concepts on how to implement and showcase your UI components',
   status: 'public'

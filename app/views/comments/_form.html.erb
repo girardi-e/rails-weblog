@@ -2,5 +2,9 @@
 <%= simple_form_for [@article, @comment] do |f| %>
   <%= f.input :commenter, label: 'Commenter' %>
   <%= f.input :body, label: 'Body' %>
+  <%= f.input :status,
+              collection:['public', 'private', 'archived'],
+              selected: 'public'
+  %>
   <%= f.submit 'Submit', class: 'btn btn-success mt-3' %>
 <% end %>

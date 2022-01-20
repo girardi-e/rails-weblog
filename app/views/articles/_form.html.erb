@@ -1,5 +1,9 @@
 <%= simple_form_for(article) do |f| %>
   <%= f.input :title, label: 'Title' %>
   <%= f.input :body, label: 'Body' %>
+  <%= f.input :status,
+              collection:['public', 'private', 'archived'],
+              selected: 'public'
+  %>
   <%= f.submit "Submit", class:" btn-success mt-3"%>
 <% end %>
