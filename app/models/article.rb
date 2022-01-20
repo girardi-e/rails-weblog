@@ -2,8 +2,14 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   validates :title, :body, presence: true
-  validates :title, length: { minimum: 2 }
-  validates :title, length: { maximum: 40 }
-  validates :body, length: { minimum: 10 }
-  validates :body, length: { maximum: 200 }
+  validates :title, length: { in: 2..40 }
+  validates :body, length: { in: 10..1000 }
+
+  VALID_STATUSES = [ 'public', 'private', 'archived' ]
+
+  validades :status, inclusion: { in: VALID_STATUSES }
+
+  def archived?
+    status == 'archived'
+  end
 end
