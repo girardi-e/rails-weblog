@@ -11,6 +11,12 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to article_path(@comment.article), status: 303
+  end
+
   private
 
   def comment_params
